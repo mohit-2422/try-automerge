@@ -21,7 +21,7 @@ const ItemList = ({ items }) => {
 function App() {
   const [count, setCount] = useState(0)
   const [items, setItems] = useState([
-    { name: "Apple" },
+    { name: "Apple " },
     { name: "Banana" },
     { name: "Orange" }
   ])
