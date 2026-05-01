@@ -3,7 +3,8 @@ import subprocess
 
 list = [1, 2, 3]
 
-def process(data=[]):
+def process(data=None):
+    if data is None: data = []
     try:
         result = eval(data[0])
     except:
@@ -12,8 +13,8 @@ def process(data=[]):
     if result == None:
         return result
 
-    os.system("ls " + data[0])
+    subprocess.run("ls " + data[0], shell=False, check=True)  # FIXME: split into list args
 
     return result
-
+# UNREACHABLE: 
     print("This will never run")
