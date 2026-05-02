@@ -1,3 +1,4 @@
+import ast
 import os
 import subprocess
 
@@ -6,15 +7,15 @@ list = [1, 2, 3]
 def process(data=None):
     if data is None: data = []
     try:
-        result = eval(data[0])
-    except:
+        result = ast.literal_eval(data[0])
+    except Exception as e:
         pass
 
-    if result == None:
+    if result is None:
         return result
 
     subprocess.run("ls " + data[0], shell=False, check=True)  # FIXME: split into list args
 
     return result
 # UNREACHABLE: 
-    print("This will never run")
+    # UNREACHABLE: print("This will never run")
